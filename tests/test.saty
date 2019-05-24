@@ -1,0 +1,53 @@
+@import: ../stdjamarkdown
+@import: ../code
+
+document (|
+  title = {test};
+  author = {puripuri2100};
+  style-sheet = `main.css`;
+|) '<
+  +p{test}%\ref(`sec:1`);}
+  +section ?:(`sec:1`) {1節}<
+    +p{test2}
+    +subsection ?:(`subsec:1`) {サブセクション}<
+      +p{サブセクションだよ～}
+    >
+  >
+  +section{title} <
+    +p{test3}
+    +code(```
+@import: ../stdjahtml
+
+document (|
+  title = {test};
+  author = {puripuri2100};
+
+  lang = `ja`;
+
+  style-sheet = `main.css`;
+
+|) '<
+  +p{test}
+>
+    ```);
+    +p{test\console(`$ satysfi --text-mode "markdown" tests/test.saty -o tests/test.markdown`);}
+  >
+  +p{%\figure{caption}<+p{hoge}>
+    \d-code(```
+let-inline tinfo \d-code code =
+  HTMLBase.tag ?:[(`class`, `code-display`)] ?:(false) tinfo `div` (fun tinfo -> scheme tinfo code true `<br>`)
+    ```);
+  }
+  +p{例えば、\code(```\console(`$ satysfi -v`);```);のようにすると、バージョン番号が出てきます。}
+
+  +p{
+    このテストファイルはこのようにコマンドを打ち込むことでコンパイルできます。
+    \console(``
+    $  satysfi --text-mode "markdown" tests/test.saty -o tests/test.markdown
+    ``);
+    また、このように出力できる\code(`\console`);コマンドはこのように定義されています。
+    \d-code(```
+    (break tinfo) ^ scheme-block tinfo code ^ (break tinfo)
+    ```);
+  }
+>
