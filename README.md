@@ -1,4 +1,4 @@
-# SATySFi-make-html
+# SATySFi-make-markdown
 
 SATySFi-make-markdown are SATySFi packages that outputting Markdown file using SATySFi's text-mode.
 
