@@ -1,0 +1,15 @@
+;; For Satyrographos 0.0.2 series
+(version 0.0.2)
+
+(library
+  (name "make-markdown")
+  (version "0.1.0")
+  (sources
+    (
+     (package "stdjamarkdown.satyh-markdown" "./stdjamarkdown.satyh-markdown")
+     (package "code.satyh-markdown" "./code.satyh-markdown")
+    )
+  )
+  (opam "satysfi-make-markdown.opam")
+  (dependencies ())
+  (compatibility ((satyrographos "0.0.1"))))

@@ -1,5 +1,5 @@
-@import: ../stdjamarkdown
-@import: ../code
+@require: make-markdown/stdjamarkdown
+@require: make-markdown/code
 
 document (|
   title = {test};
@@ -16,7 +16,8 @@ document (|
   +section{title} <
     +p{test3}
     +code(```
-@import: ../stdjahtml
+@require: make-markdown/stdjamarkdown
+@require: make-markdown/code
 
 document (|
   title = {test};
