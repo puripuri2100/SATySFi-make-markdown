@@ -7,11 +7,7 @@ SATySFi-make-markdown are SATySFi packages that outputting Markdown file using S
 ## Satyrographos
 
 ```
-git clone https://github.com/puripuri2100/SATySFi-make-markdown.git
-
-cd SATySFi-make-markdown
-
-opam pin add -v "file://$PWD"
+opam install satysfi-make-markdown
 
 satyrographos install
 ```
